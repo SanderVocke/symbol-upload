@@ -50,7 +50,7 @@ runs:
   steps:
     - name: Install symbol-upload
       shell: bash
-      run: npm i -g --save git+https://github.com/SanderVocke/symbol-upload#test_action
+      run: npm i -g --save git+https://github.com/SanderVocke/symbol-upload#test_action @bugsplat/js-api-client
         
     - name: Run symbol-upload
       shell: bash
