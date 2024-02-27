@@ -50,12 +50,24 @@ runs:
   steps:
     - name: Install symbol-upload
       shell: bash
-      run: npm i -g --save git+https://github.com/SanderVocke/symbol-upload#test_action @bugsplat/js-api-client
+      run: |
+        npm i -g --save git+https://github.com/SanderVocke/symbol-upload#test_action \
+           @bugsplat/js-api-client \
+           archiver \
+           command-line-args \
+           command-line-usage \
+           firstline \
+           glob \
+           macho-uuid \
+           pdb-guid \
+           promise-retry \
+           rxjs \
+           workerpool
         
     - name: Run symbol-upload
       shell: bash
       run: >-
-        symbol-upload
+        npm exec symbol-upload
         -b "${{ inputs.database }}"
         -a "${{ inputs.application }}"
         -v "${{ inputs.version }}"
